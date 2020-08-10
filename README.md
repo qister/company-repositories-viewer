@@ -1,4 +1,5 @@
-Рабочую версию можно сразу посмотреть [здесь](https://company-repositories-viewer.vercel.app/).
+Рабочую версию можно сразу посмотреть [здесь](https://company-repositories-viewer.vercel.app/). <br>
+(Сборка предназначена для последних версий Chrome и Firefox)
 
 ## Запуск проекта
 
