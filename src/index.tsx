@@ -9,11 +9,11 @@ import { rootReducer } from './redux/rootReducer'
 import createSagaMiddleware from 'redux-saga'
 import { sagaWatcher } from './redux/sagas'
 
-declare global {
-  interface Window {
-    __REDUX_DEVTOOLS_EXTENSION__?: any
-  }
-}
+// declare global {
+//   interface Window {
+//     __REDUX_DEVTOOLS_EXTENSION__?: any
+//   }
+// }
 
 const saga = createSagaMiddleware()
 
@@ -21,8 +21,8 @@ const store = createStore(
   rootReducer,
   compose(
     applyMiddleware(saga),
-    window.__REDUX_DEVTOOLS_EXTENSION__ &&
-      window.__REDUX_DEVTOOLS_EXTENSION__(),
+    // window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    //   window.__REDUX_DEVTOOLS_EXTENSION__(),
   ),
 )
 
