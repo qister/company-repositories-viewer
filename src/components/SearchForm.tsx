@@ -44,6 +44,7 @@ const SearchForm = (props: any) => {
   useEffect(() => {
     if (props.alert) {
       props.setAlert(props.alert)
+      
       setAlertOpen(true)
       setTimeout(() => {
         setAlertOpen(false)

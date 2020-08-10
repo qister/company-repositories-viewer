@@ -1,6 +1,6 @@
 import { REQUEST_REPOS } from './types'
 import { takeEvery, put, call, delay } from 'redux-saga/effects'
-import { showLoader, hideLoader, setData, setAlert } from './actions'
+import { showLoader, hideLoader, setData, setAlert, setCompany } from './actions'
 import axios from 'axios'
 
 export function* sagaWatcher() {
@@ -17,9 +17,11 @@ function* sagaWorker(action: Action) {
   try {
     // const payload = yield call(fetchCompany.bind(null, action.payload))
     const payload = yield call(fetchCompany, action.payload)
+    yield put(setCompany(action.payload))
     yield put(setData(payload.data))
   } catch (e) {
     yield put(setAlert(e.message))
+    yield put(setData([]))
   } finally {
     yield delay(2500)
     yield put(hideLoader())
