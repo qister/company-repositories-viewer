@@ -147,7 +147,7 @@ function TableWithHeader(props: Props) {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[10]}
+          rowsPerPageOptions={[10, 25]}
           component='div'
           count={rows.length}
           rowsPerPage={rowsPerPage}
