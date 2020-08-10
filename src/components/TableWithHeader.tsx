@@ -87,7 +87,7 @@ function TableWithHeader(props: Props) {
   const handleChangeRowsPerPage = (
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
-    setRowsPerPage(+event.target.value)
+    setRowsPerPage(Number(event.target.value))
     setPage(0)
   }
 
@@ -147,7 +147,7 @@ function TableWithHeader(props: Props) {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[10, 25, 100]}
+          rowsPerPageOptions={[10]}
           component='div'
           count={rows.length}
           rowsPerPage={rowsPerPage}
